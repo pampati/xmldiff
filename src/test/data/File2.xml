@@ -1,0 +1,7 @@
+<employees>
+    <employee1 id="1">
+        <name1>James1</name1>
+        <department>Sales</department>
+        <phone>8034832190</phone>
+    </employee1>
+</employees>
