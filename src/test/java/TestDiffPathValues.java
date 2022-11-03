@@ -1,17 +1,10 @@
-
-
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.util.List;
 import org.custommonkey.xmlunit.DetailedDiff;
 import org.custommonkey.xmlunit.Diff;
-import org.custommonkey.xmlunit.Difference;
 import org.custommonkey.xmlunit.XMLUnit;
 import org.xml.sax.SAXException;
+
+import java.io.*;
+import java.util.List;
 
 /**
  *
@@ -19,7 +12,7 @@ import org.xml.sax.SAXException;
 
  * @author Javin Paul
  */
-public class Test {
+public class TestDiffPathValues {
 
 
     public static void main(String args[]) throws FileNotFoundException,
