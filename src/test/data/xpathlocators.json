@@ -1,10 +1,12 @@
 {
   "testpom1locations": {
     "version": "//project/modelVersion",
-    "artifactId": "//project/artifactId"
+    "artifactId": "//project/artifactId",
+    "groupId": "//project/groupId"
   },
   "testpom2locations": {
     "version": "//dependencies/dependency/version",
-    "artifactId": "//dependencies/dependency/artifactId"
+    "artifactId": "//dependencies/dependency/artifactId",
+    "groupId": "//dependencies/dependency/groupId"
   }
 }
