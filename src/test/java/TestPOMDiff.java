@@ -26,20 +26,32 @@ public class TestPOMDiff {
             List<String> values;
             List<String> macthingvalues =new ArrayList<>();
             List<String> notmacthingvalues= new ArrayList<>();
+            //Add these lines in the code
+            List<String> notmacthingXpaths= new ArrayList<>();
+            List<String> finalResults= new ArrayList<>();
+            ////
             int CountOfnoMatch=0;
             int CountofMatch=0;
             System.out.println(xpaths);
             for(int k=0;k<xpaths.size();k++) {
                 values=printValues(xpaths.get(k), xpaths.get(k+1));
                 k++;
-                if(!values.get(0).equals(values.get(1))){
+                //update this below
+                if(!values.get(0).split(":")[0].equals(values.get(1).split(":")[0])){
+                    //update this above
                     CountOfnoMatch++;
-                    notmacthingvalues.add(values.get(0));
-                    notmacthingvalues.add(values.get(1));
+                    notmacthingvalues.add(values.get(0).split(":")[0]);
+                    notmacthingvalues.add(values.get(1).split(":")[0]);
+                    //update this below
+                    notmacthingXpaths.add(values.get(0).split(":")[1]);
+                    notmacthingXpaths.add(values.get(1).split(":")[1]);
+                    finalResults.add(values.get(0).split(":")[1]+":"+values.get(0).split(":")[0]);
+                    finalResults.add(values.get(1).split(":")[1]+":"+values.get(1).split(":")[0]);
+                    //update this below
                 }else{
                     CountofMatch++;
-                    macthingvalues.add(values.get(0));
-                    macthingvalues.add(values.get(1));
+                    macthingvalues.add(values.get(0).split(":")[0]);
+                    macthingvalues.add(values.get(1).split(":")[0]);
                 }
             }
             System.out.println("No of not matching values " + CountOfnoMatch);
@@ -47,6 +59,10 @@ public class TestPOMDiff {
 
             System.out.println("List of matched values" + macthingvalues);
             System.out.println("List of not matched values " + notmacthingvalues);
+            //update this below
+            System.out.println("List of not matched xpaths " + notmacthingXpaths);
+            System.out.println("List of not matched xpaths " + finalResults);
+            ////update this above
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -114,8 +130,10 @@ public class TestPOMDiff {
         if (firstValue != null && secondValue != null) {
             System.out.println(firstValue);
             System.out.println(secondValue);
-            values.add(firstValue);
-            values.add(secondValue);
+
+            //Add these lines in the code
+            values.add(firstValue+":"+xpathinfile1);
+            values.add(secondValue+":"+xpathinfile2);
         }
         return values;
     }
